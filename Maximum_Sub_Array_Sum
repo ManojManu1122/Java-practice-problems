@@ -1,0 +1,28 @@
+class HelloWorld {
+    public static void maxSubArraySum(int numbers[])
+    {
+        int current_sum = 0;
+        int max_sum = Integer.MIN_VALUE;
+        for(int i=0;i<numbers.length;i++)
+        {
+            for(int j=i;j<numbers.length;j++)
+            {
+                current_sum=0;
+                for(int k=i;k<=j;k++){
+                    current_sum += numbers[k];
+                }
+                System.out.println(current_sum);
+                 if(max_sum < current_sum){
+            max_sum = current_sum;
+        }
+            }
+        }
+       
+        System.out.println("Max Sum = "+ max_sum);
+    }
+    public static void main(String[] args) {
+        int nums[] = {2,4,6,8,10};
+        maxSubArraySum(nums);
+        
+    }
+}

@@ -1,0 +1,25 @@
+class HelloWorld {
+    public static void reverseArray(int numbers[])
+    {
+        int i=0, j=numbers.length-1;
+        while(i<j)
+        {
+            int temp = numbers[j];
+            numbers[j] = numbers[i];
+            numbers[i] = temp;
+            i++;
+            j--;
+        }
+      for(int k=0;k<numbers.length;k++)
+      {
+          System.out.println(numbers[k]);
+      }
+       
+    }
+    public static void main(String[] args) {
+        int nums[] = {2,4,6,8,10};
+        reverseArray(nums);
+       
+        
+    }
+}

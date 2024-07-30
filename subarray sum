@@ -1,0 +1,27 @@
+1.Longest subarray with sum (K) only positives.
+
+class Main{
+    public static void main(String[] args){
+        int arr[] = {2, 3, 5, 1, 9};
+        int k = 10;
+System.out.println("Length of longest sub array with sum is :"+ getLongest(arr,k));
+    }
+    static int getLongest(int[] arr,int k){
+        
+        int len = 0,left=0,right=0,sum=arr[0];
+        while(right<arr.length){
+            while(left<=right && sum > k){
+                sum -= arr[left];
+                left++;
+            }
+            if(sum==k){
+                len = Math.max(len,right-left+1);
+            }
+            right++;
+            if(right<arr.length){
+                sum+= arr[right];
+            }
+        }
+        return len;
+    }
+    }
